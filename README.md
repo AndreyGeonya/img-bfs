@@ -1,9 +1,4 @@
-Img-bfs &mdash simple JavaScript library for breadth-first traversal in image.
-
-Events:
-
-pxopen - when pixel opened (pixel added to processing queue)
-pxprocess - when pixel processed (pixel removed from processing queue & all neighbors open)
+Img-bfs is a JavaScript library for breadth-first traversal in image.
 
 ## API
 
@@ -11,7 +6,7 @@ pxprocess - when pixel processed (pixel removed from processing queue & all neig
 
 The main function of the library is 
 
-    bfs(&lt;HTMLImageElement | HTMLCanvasElement&gt; img, &lt;Coord&gt; startCoord, &lt;Object&gt; eventMap)
+<i>bfs(&lt;HTMLImageElement | HTMLCanvasElement&gt; img, &lt;Coord&gt; startCoord, &lt;Object&gt; eventMap)</i>
 
 It starts search from <i>startCoord</i> coordinate.
 
