@@ -41,11 +41,11 @@ Function <i>skip</i> skips neighbors. When you call this function all neighbors 
 
 ## Example
 
-We have image with 3 markers:
+We have an image with 3 markers:
 
 <img src="https://raw.githubusercontent.com/AndreyGeonya/img-bfs/master/examples/markers/markers.jpg" width="440", height="280">
 
-When user clicks to one of them we add mask on top of it:
+When user clicks to one of them we need to add mask on top of it:
 
 <img src="https://raw.githubusercontent.com/AndreyGeonya/img-bfs/master/examples/markers/screenshot.png" width="440", height="280">
 
