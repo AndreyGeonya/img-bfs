@@ -43,11 +43,11 @@ Function <i>skip</i> skips neighbors. When you call this function all neighbors 
 
 We have image with 3 markers:
 
-<img src="">
+<img src="https://raw.githubusercontent.com/AndreyGeonya/img-bfs/master/examples/markers/markers.jpg" width="440", height="280">
 
 When user clicks to one of them we add mask on top of it:
 
-<img src="">
+<img src="https://raw.githubusercontent.com/AndreyGeonya/img-bfs/master/examples/markers/screenshot.png" width="440", height="280">
 
 To implement this feature we need to get all pixels of the clicked marker and draw our mask in these pixel positions. Let's find pixels and draw them on canvas overlay: 
 
