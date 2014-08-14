@@ -79,6 +79,8 @@ To implement this feature we need to get all pixels of the clicked marker and dr
         }
     }
 
+See full code of this example <a href="https://github.com/AndreyGeonya/img-bfs/blob/master/examples/markers/index.html">here</a>.
+
 ## Changelog
 
 ### 1.0.0 &mdash; 15.08.2014
