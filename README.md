@@ -69,8 +69,11 @@ To implement this feature we need to get all pixels of the clicked marker and dr
             ctx.arc(e.pixel.coord.x, e.pixel.coord.y, 1, 0, 2 * Math.PI, true);
             ctx.fill();
             ctx.closePath();
-            // skip neighbors of the white pixels (white pixels are not belongs to marker!)
-            if (e.pixel.color[0] === 255 && e.pixel.color[1] === 255 && e.pixel.color[2] === 255) {
+            // skip neighbors of the white pixels,
+            // white pixels are not belongs to the marker
+            if (e.pixel.color[0] === 255 && 
+                e.pixel.color[1] === 255 && 
+                e.pixel.color[2] === 255) {
                 e.skip();
             }
         }
