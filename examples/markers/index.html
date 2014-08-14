@@ -13,14 +13,16 @@
     </style>
 </head>
 <body>
-    <p>Click on marker to select:</p>
+    <p>Click on marker to select pixels and add mask:</p>
     <img id="myImg" src="markers.jpg" />
     <canvas id="canv" width="640" height="480"></canvas>
     <script>
         window.onload = function() {
-            var canv = document.getElementById("canv"); 
-            var ctx = canv.getContext("2d");
-            var img = document.getElementById('myImg');
+            var img = document.getElementById('myImg'),
+                canv = document.getElementById("canv"),
+                ctx = canv.getContext("2d");
+            
+            ctx.fillStyle = "rgba(0, 0, 0, 0.3)";
 
             canv.onclick = function(e) {
                 bfs(img, {x: e.offsetX, y: e.offsetY}, {
@@ -29,11 +31,11 @@
             }
 
             function draw(e) {
-                ctx.fillStyle = "rgba(0, 0, 0, 0.3)";
                 ctx.beginPath();
                 ctx.arc(e.pixel.coord.x, e.pixel.coord.y, 1, 0, 2 * Math.PI, true);
                 ctx.fill();
                 ctx.closePath();
+                // skip neighbors of the white pixels (white pixels are not belongs to marker!)
                 if (e.pixel.color[0] === 255 && e.pixel.color[1] === 255 && e.pixel.color[2] === 255) {
                     e.skip();
                 }

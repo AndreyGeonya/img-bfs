@@ -12,7 +12,7 @@ It starts search in <i>img</i> image from <i>startCoord</i> coordinate(s).
 
 ### Events
 
-You can subscribe to events via eventMap param. For example:
+You can subscribe to events via <i>eventMap</i> param. For example:
 
     bfs(img, {x: 10, y: 10}, {
         onvisit: function(e) {
@@ -20,7 +20,9 @@ You can subscribe to events via eventMap param. For example:
         }
     });
 
-Currently just <i>onvisit</i> event supported. This event rises when img-bfs visits each pixel. Event object structure:
+Currently just <i>onvisit</i> event supported. This event rises when img-bfs visits each pixel.
+
+Event object structure:
 
     {
         pixel: {
@@ -36,6 +38,43 @@ Property <i>pixel</i> contains information about visited pixel: coordinates and 
 Function <i>stop</i> stops search. Useful if you found a pixel that was needed and want to stop search.
 
 Function <i>skip</i> skips neighbors. When you call this function all neighbors of the visited pixel won't be added to the processing queue. Useful if you found boundary pixel of some image and want to continue search within the image, but not to go beyond its boundaries.
+
+## Example
+
+We have image with 3 markers:
+
+<img src="">
+
+When user clicks to one of them we add mask on top of it:
+
+<img src="">
+
+To implement this feature we need to get all pixels of the clicked marker and draw our mask in these pixel positions. Let's find pixels and draw them on canvas overlay: 
+
+    window.onload = function() {
+        var img = document.getElementById('myImg'),
+            canv = document.getElementById("canv"),
+            ctx = canv.getContext("2d");
+        
+        ctx.fillStyle = "rgba(0, 0, 0, 0.3)";
+
+        canv.onclick = function(e) {
+            bfs(img, {x: e.offsetX, y: e.offsetY}, {
+                onvisit: draw
+            });
+        }
+
+        function draw(e) {
+            ctx.beginPath();
+            ctx.arc(e.pixel.coord.x, e.pixel.coord.y, 1, 0, 2 * Math.PI, true);
+            ctx.fill();
+            ctx.closePath();
+            // skip neighbors of the white pixels (white pixels are not belongs to marker!)
+            if (e.pixel.color[0] === 255 && e.pixel.color[1] === 255 && e.pixel.color[2] === 255) {
+                e.skip();
+            }
+        }
+    }
 
 ## Changelog
 
