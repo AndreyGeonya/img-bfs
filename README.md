@@ -6,9 +6,9 @@ Img-bfs is a JavaScript library for breadth-first traversal in image.
 
 The main function of the library is 
 
-<b>bfs</b>(&lt;HTMLImageElement | HTMLCanvasElement&gt; <i>img</i>, &lt;Coord&gt; <i>startCoord</i>, &lt;Object&gt; <i>eventMap</i>);
+<b>bfs</b>(&lt;HTMLImageElement | HTMLCanvasElement&gt; <i>img</i>, &lt;Coord | Array&gt; <i>startCoord</i>, &lt;Object&gt; <i>eventMap</i>);
 
-It starts search in <i>img</i> from <i>startCoord</i> coordinate.
+It starts search in <i>img</i> image from <i>startCoord</i> coordinate(s).
 
 ### Events
 
