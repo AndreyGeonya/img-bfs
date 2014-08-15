@@ -1,4 +1,4 @@
-Img-bfs is a JavaScript library for <a href="http://en.wikipedia.org/wiki/Breadth-first_search" target="_blank">breadth-first traversal in image</a>.
+Img-bfs is a JavaScript library for <a href="http://en.wikipedia.org/wiki/Breadth-first_search" target="_blank">breadth-first traversal</a> in image.
 
 ## API
 
