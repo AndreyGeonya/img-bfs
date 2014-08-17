@@ -37,7 +37,7 @@ Property <i>pixel</i> contains information about visited pixel: coordinates and 
 
 Function <i>stop</i> stops search. Useful if you found a pixel that was needed and want to stop search.
 
-Function <i>skip</i> skips neighbors. When you call this function all neighbors of the visited pixel won't be added to the processing queue. Useful if you found boundary pixel of some image and want to continue search within the image, but not to go beyond its boundaries.
+Function <i>skip</i> skips neighbors. When you call this function all neighbors of the visited pixel won't be added to the processing queue. Useful if you found boundary pixel of some shape, want to continue search within the shape and not to go beyond its boundaries.
 
 ## Example
 
