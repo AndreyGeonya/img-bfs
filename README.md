@@ -49,7 +49,7 @@ When user clicks to one of them we need to add mask on top of it:
 
 <img src="https://raw.githubusercontent.com/AndreyGeonya/img-bfs/master/examples/markers/screenshot.png" width="440", height="280">
 
-To implement this feature we need to get all pixels of the clicked marker and draw our mask in these pixel positions. Let's find pixels and draw them on canvas overlay: 
+To implement this feature we need to get all pixels of the clicked marker and draw our mask in these pixel positions. Let's find pixels and draw mask on canvas overlay: 
 
     window.onload = function() {
         var img = document.getElementById('myImg'),
