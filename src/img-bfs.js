@@ -198,6 +198,7 @@ function _is(type, obj) {
     return obj !== undefined && obj !== null && clas === type;
 }
 
-window.bfs = bfs;
+if (typeof module !== 'undefined') module.exports = bfs;
+else window.bfs = bfs;
 
 })();

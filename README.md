@@ -6,9 +6,9 @@ Img-bfs is a JavaScript library for <a href="http://en.wikipedia.org/wiki/Breadt
 
 The main function of the library is 
 
-<b>bfs</b>(&lt;HTMLImageElement | HTMLCanvasElement&gt; <i>img</i>, &lt;Coord | Array&gt; <i>startCoord</i>, &lt;Object&gt; <i>eventMap</i>);
+<b>bfs</b>(&lt;HTMLImageElement | HTMLCanvasElement&gt; <i>img</i>, &lt;Coord | Array&gt; <i>startCoord</i>, &lt;Object&gt; <i>eventMap</i>, &lt;Array&gt; <i>blacklist</i>);
 
-It starts search in <i>img</i> image from <i>startCoord</i> coordinate(s).
+It starts search in <i>img</i> image from <i>startCoord</i> coordinate(s) and skips all pixels from <i>blacklist</i>.
 
 ### Events
 
@@ -82,11 +82,15 @@ To implement this feature we need to get all pixels of the clicked marker and dr
 See full code of this example <a href="https://github.com/AndreyGeonya/img-bfs/blob/master/examples/markers/index.html">here</a>.
 
 ## TODO
-* Add blacklist option to disable unacceptable pixels visits
 * Add more examples
 
 ## Changelog
 
-### 1.0.0 &mdash; 15.08.2014
+### 0.1.1 &mdash; 26.10.2014
+
+* Blacklist added
+* package.json added
+
+### 0.1.0 &mdash; 15.08.2014
 
 * First Img-bfs release
