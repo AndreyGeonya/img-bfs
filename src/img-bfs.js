@@ -1,20 +1,20 @@
 (function() {
 
-// (HTMLImageElement | HTMLCanvasElement, Coord | Array, Object)
-function bfs(img, startCoord, eventMap) {
+// (HTMLImageElement | HTMLCanvasElement, Coord | Array, Object, Array)
+function bfs(img, startCoord, eventMap, blacklist) {
     var queue = _is('Array', startCoord) ? startCoord : [startCoord];
 
     if (_isImgLoaded(img)) {
-        _bfs(_wrapByCanvas(img), queue, eventMap);
+        _bfs(_wrapByCanvas(img), queue, eventMap, blacklist);
     } else {
         img.addEventListener('load', function() {
-            _bfs(_wrapByCanvas(img), queue, eventMap);
+            _bfs(_wrapByCanvas(img), queue, eventMap, blacklist);
         }, false);
     }
 }
 
-// (HTMLCanvasElement, Array, Object)
-function _bfs(canvas, queue, eventMap) {
+// (HTMLCanvasElement, Array, Object, Array)
+function _bfs(canvas, queue, eventMap, blacklist) {
     var ctx = canvas.getContext('2d'),
         imgSize = {
             w: canvas.width,
@@ -24,6 +24,12 @@ function _bfs(canvas, queue, eventMap) {
         visited = {},
         stopMainLoop = false,
         skipNeighbords = false;
+
+    if (blacklist !== undefined) {
+        blacklist.forEach(function(coord) {
+            visited[coord.x + '-' + coord.y] = true;
+        });
+    }
 
     function visitPx(coord) {
         visited[coord.x + '-' + coord.y] = true;
@@ -91,7 +97,7 @@ function _getNeighborPixels(coord, imgSize, imgCols) {
         });
     }
 
-    if(coord.y > 0) { // tPx
+    if (coord.y > 0) { // tPx
         pos = {
             x: coord.x,
             y: coord.y - 1
@@ -102,7 +108,7 @@ function _getNeighborPixels(coord, imgSize, imgCols) {
         });
     }
 
-    if(coord.x < imgSize.w && coord.y > 0) { // trPx
+    if (coord.x < imgSize.w && coord.y > 0) { // trPx
         pos = {
             x: coord.x + 1,
             y: coord.y - 1
@@ -113,7 +119,7 @@ function _getNeighborPixels(coord, imgSize, imgCols) {
         });
     }
 
-    if(coord.x < imgSize.w) { // rPx
+    if (coord.x < imgSize.w) { // rPx
         pos = {
             x: coord.x + 1,
             y: coord.y
@@ -124,7 +130,7 @@ function _getNeighborPixels(coord, imgSize, imgCols) {
         });
     }
 
-    if(coord.x < imgSize.w && coord.y < imgSize.h) { // brPx
+    if (coord.x < imgSize.w && coord.y < imgSize.h) { // brPx
         pos = {
             x: coord.x + 1,
             y: coord.y + 1
@@ -135,7 +141,7 @@ function _getNeighborPixels(coord, imgSize, imgCols) {
         });
     }
 
-    if(coord.y < imgSize.h) { // bPx
+    if (coord.y < imgSize.h) { // bPx
         pos = {
             x: coord.x,
             y: coord.y + 1
@@ -146,7 +152,7 @@ function _getNeighborPixels(coord, imgSize, imgCols) {
         });
     }
 
-    if(coord.x > 0 && coord.y < imgSize.h) { // blPx
+    if (coord.x > 0 && coord.y < imgSize.h) { // blPx
         pos = {
             x: coord.x - 1,
             y: coord.y + 1
@@ -157,7 +163,7 @@ function _getNeighborPixels(coord, imgSize, imgCols) {
         });
     }
 
-    if(coord.x > 0) { // lPx
+    if (coord.x > 0) { // lPx
         pos = {
             x: coord.x - 1,
             y: coord.y
