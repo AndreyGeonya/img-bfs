@@ -2,3 +2,4 @@ node-modules
 img-bfs.sublime-project
 img-bfs.sublime-workspace
 error.log
+npm-debug.log

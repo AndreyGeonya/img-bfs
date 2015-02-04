@@ -86,6 +86,10 @@ See full code of this example <a href="https://github.com/AndreyGeonya/img-bfs/b
 
 ## Changelog
 
+### 0.1.2 &mdash; 04.02.2015
+
+* package.json changed
+
 ### 0.1.1 &mdash; 26.10.2014
 
 * Blacklist added

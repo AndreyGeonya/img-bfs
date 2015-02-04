@@ -1,18 +1,18 @@
 {
     "name": "img-bfs",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "description": "JavaScript library for breadth-first traversal in image",
-    "homepage": "https://github.com/AndreyGeonya/img-bfs",
+    "homepage": "https://github.com/AndriiHeonia/img-bfs",
     "keywords": [
         "breadth-first-search",
         "breadth-first-traversal",
         "image-analysis",
         "algorithm"
     ],
-    "author": "Andrey Geonya",
+    "author": "Andrii Heonia",
     "repository": {
         "type": "git",
-        "url": "git://github.com/AndreyGeonya/img-bfs.git"
+        "url": "git://github.com/AndriiHeonia/img-bfs.git"
     },
     "main": "./src/img-bfs.js"
 }
