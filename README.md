@@ -35,7 +35,7 @@ Event object structure:
 
 Property <i>pixel</i> contains information about visited pixel: coordinates and color (rgba).
 
-Function <i>stop</i> stops search. Useful if you found a pixel which was needed and want to stop search.
+Function <i>stop</i> stops search. Useful if you found a pixel which was needed and you want to stop search.
 
 Function <i>skip</i> skips neighbors. When you call this function all neighbors of the visited pixel won't be added to the processing queue. Useful if you found a boundary pixel of the shape, but you want to continue search within the shape without going beyond its boundaries.
 
