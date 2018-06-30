@@ -8,7 +8,7 @@ The main function of the library is
 
 <b>bfs</b>(&lt;HTMLImageElement | HTMLCanvasElement&gt; <i>img</i>, &lt;Coord | Array&gt; <i>startCoord</i>, &lt;Object&gt; <i>eventMap</i>, &lt;Array&gt; <i>blacklist</i>);
 
-It starts search in <i>img</i> image from <i>startCoord</i> coordinate(s) and skips all pixels from <i>blacklist</i>.
+It starts searching in <i>img</i> image from <i>startCoord</i> coordinate(s) and skips all pixels from the <i>blacklist</i>.
 
 ### Events
 
@@ -20,7 +20,7 @@ You can subscribe to events via <i>eventMap</i> param. For example:
         }
     });
 
-Currently just <i>onvisit</i> event supported. This event rises when img-bfs visits each pixel.
+Currently, only <i>onvisit</i> event is supported. This event is fired when img-bfs visits each pixel.
 
 Event object structure:
 
@@ -35,21 +35,21 @@ Event object structure:
 
 Property <i>pixel</i> contains information about visited pixel: coordinates and color (rgba).
 
-Function <i>stop</i> stops search. Useful if you found a pixel that was needed and want to stop search.
+Function <i>stop</i> stops search. Useful if you found a pixel which was needed and want to stop search.
 
-Function <i>skip</i> skips neighbors. When you call this function all neighbors of the visited pixel won't be added to the processing queue. Useful if you found boundary pixel of some shape, want to continue search within the shape and not to go beyond its boundaries.
+Function <i>skip</i> skips neighbors. When you call this function all neighbors of the visited pixel won't be added to the processing queue. Useful if you found a boundary pixel of the shape, but you want to continue search within the shape without going beyond its' boundaries.
 
 ## Example
 
 We have an image with 3 markers:
 
-<img src="https://raw.githubusercontent.com/AndriiHeonia/img-bfs/master/examples/markers/markers.jpg" width="440", height="280">
+[](https://raw.githubusercontent.com/AndriiHeonia/img-bfs/master/examples/markers/markers.jpg)
 
-When user clicks to one of them we need to add mask on top of it:
+When user clicks on one of them we need to add mask on top of it:
 
-<img src="https://raw.githubusercontent.com/AndriiHeonia/img-bfs/master/examples/markers/screenshot.png" width="440", height="280">
+[](https://raw.githubusercontent.com/AndriiHeonia/img-bfs/master/examples/markers/screenshot.png)
 
-To implement this feature we need to get all pixels of the clicked marker and draw our mask in these pixel positions. Let's find pixels and draw mask on canvas overlay: 
+To implement this feature we need to get all pixels of the clicked marker and draw our mask on the given positions. Let's find pixels and draw mask on the canvas overlay: 
 
     window.onload = function() {
         var img = document.getElementById('myImg'),
@@ -70,7 +70,7 @@ To implement this feature we need to get all pixels of the clicked marker and dr
             ctx.fill();
             ctx.closePath();
             // skip neighbors of the white pixels,
-            // white pixels are not belongs to the marker
+            // white pixels do not belong to the marker
             if (e.pixel.color[0] === 255 && 
                 e.pixel.color[1] === 255 && 
                 e.pixel.color[2] === 255) {
