@@ -37,17 +37,17 @@ Property <i>pixel</i> contains information about visited pixel: coordinates and 
 
 Function <i>stop</i> stops search. Useful if you found a pixel which was needed and want to stop search.
 
-Function <i>skip</i> skips neighbors. When you call this function all neighbors of the visited pixel won't be added to the processing queue. Useful if you found a boundary pixel of the shape, but you want to continue search within the shape without going beyond its' boundaries.
+Function <i>skip</i> skips neighbors. When you call this function all neighbors of the visited pixel won't be added to the processing queue. Useful if you found a boundary pixel of the shape, but you want to continue search within the shape without going beyond its boundaries.
 
 ## Example
 
 We have an image with 3 markers:
 
-[[https://raw.githubusercontent.com/AndriiHeonia/img-bfs/master/examples/markers/markers.jpg|alt=markers]]
+<img src="https://raw.githubusercontent.com/AndriiHeonia/img-bfs/master/examples/markers/markers.jpg" />
 
 When user clicks on one of them we need to add mask on top of it:
 
-[[https://raw.githubusercontent.com/AndriiHeonia/img-bfs/master/examples/markers/screenshot.png|alt=markers]]
+<img src="https://raw.githubusercontent.com/AndriiHeonia/img-bfs/master/examples/markers/screenshot.png" />
 
 To implement this feature we need to get all pixels of the clicked marker and draw our mask on the given positions. Let's find pixels and draw mask on the canvas overlay: 
 
