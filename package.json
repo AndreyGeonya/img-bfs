@@ -1,7 +1,7 @@
 {
     "name": "img-bfs",
-    "version": "0.1.2",
-    "description": "JavaScript library for breadth-first traversal in image",
+    "version": "0.1.3",
+    "description": "JavaScript library for breadth-first traversal on image",
     "homepage": "https://github.com/AndriiHeonia/img-bfs",
     "keywords": [
         "breadth-first-search",

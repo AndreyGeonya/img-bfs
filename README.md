@@ -4,7 +4,7 @@ Img-bfs is a JavaScript library for <a href="http://en.wikipedia.org/wiki/Breadt
 
 ### Main function
 
-The main function of the library is 
+The main function of the library is
 
 <b>bfs</b>(&lt;HTMLImageElement | HTMLCanvasElement&gt; <i>img</i>, &lt;Coord | Array&gt; <i>startCoord</i>, &lt;Object&gt; <i>eventMap</i>, &lt;Array&gt; <i>blacklist</i>);
 
@@ -49,13 +49,13 @@ When user clicks on one of them we need to add mask on top of it:
 
 <img src="https://raw.githubusercontent.com/AndriiHeonia/img-bfs/master/examples/markers/screenshot.png" />
 
-To implement this feature we need to get all pixels of the clicked marker and draw our mask on the given positions. Let's find pixels and draw mask on the canvas overlay: 
+To implement this feature we need to get all pixels of the clicked marker and draw our mask on the given positions. Let's find pixels and draw mask on the canvas overlay:
 
     window.onload = function() {
         var img = document.getElementById('myImg'),
             canv = document.getElementById("canv"),
             ctx = canv.getContext("2d");
-        
+
         ctx.fillStyle = "rgba(0, 0, 0, 0.3)";
 
         canv.onclick = function(e) {
@@ -71,8 +71,8 @@ To implement this feature we need to get all pixels of the clicked marker and dr
             ctx.closePath();
             // skip neighbors of the white pixels,
             // white pixels do not belong to the marker
-            if (e.pixel.color[0] === 255 && 
-                e.pixel.color[1] === 255 && 
+            if (e.pixel.color[0] === 255 &&
+                e.pixel.color[1] === 255 &&
                 e.pixel.color[2] === 255) {
                 e.skip();
             }
@@ -85,6 +85,10 @@ See full code of this example <a href="https://github.com/AndriiHeonia/img-bfs/b
 * Add more examples
 
 ## Changelog
+
+### 0.1.3 &mdash; 30.06.2018
+
+* Updated readme and example
 
 ### 0.1.2 &mdash; 04.02.2015
 
